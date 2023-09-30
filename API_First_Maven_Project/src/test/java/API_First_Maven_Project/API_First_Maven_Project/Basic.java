@@ -49,7 +49,7 @@ public class Basic {
 		
 		JsonPath js1=ReUsuableMethods.rawToJson(getPlaceResponse);
 		String actualAddress=js1.get("address");
-		Assert.assertEquals(actualAddress,newAddress);
+		Assert.assertEquals(actualAddress, newAddress);
 		System.out.println(actualAddress);		
 	}
 
