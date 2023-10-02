@@ -47,6 +47,7 @@ public class Basic {
 		.then().log().all().assertThat().statusCode(200)
 		.extract().response().asString();
 		
+		//JsonPath js1=ReUsuableMethods.rawToJson(getPlaceResponse);
 		JsonPath js1=ReUsuableMethods.rawToJson(getPlaceResponse);
 		String actualAddress=js1.get("address");
 		Assert.assertEquals(actualAddress, newAddress);
