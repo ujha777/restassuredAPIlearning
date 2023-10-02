@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="API_First_Maven_Project.API_First_Maven_Project.SumValidations">
+      <class name="API_First_Maven_Project.API_First_Maven_Project.DynamicJson">
         <methods>
-          <include name="sumOfCourse"/>
+          <include name="deleteBook"/>
         </methods>
-      </class> <!-- API_First_Maven_Project.API_First_Maven_Project.SumValidations -->
+      </class> <!-- API_First_Maven_Project.API_First_Maven_Project.DynamicJson -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

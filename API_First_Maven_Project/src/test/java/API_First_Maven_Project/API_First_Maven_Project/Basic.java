@@ -7,11 +7,16 @@ import org.testng.*;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 import files.Payload;
 import files.ReUsuableMethods;
 public class Basic {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 			//given-all input details
 			//when-submit the API
@@ -19,7 +24,7 @@ public class Basic {
 		//Add place ->Update place with new Address ->Get place to validate if new address is present in response
 		RestAssured.baseURI="https://rahulshettyacademy.com";
 		String response=given().log().all().queryParam("key", "qaclick123").header("Content-Type","application/json")
-		.body(Payload.Add_Place())
+		.body(new String(Files.readAllBytes(Paths.get("E:\\RESTAssuredAPI\\API_First_Maven_Project\\payload_addplace.json"))))
 		.when().post("maps/api/place/add/json")
 		.then().assertThat().statusCode(200).body("scope", equalTo("APP"))
 		.header("Server","Apache/2.4.52 (Ubuntu)").extract().response().asString();
